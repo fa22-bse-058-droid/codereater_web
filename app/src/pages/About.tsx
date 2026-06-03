@@ -182,6 +182,62 @@ export default function About() {
         </motion.div>
       </div>
 
+      {/* ═══ HERO ═══ */}
+      <div className="min-h-[90vh] flex flex-col justify-center px-6 md:px-10 pb-20 border-b border-white/10">
+        <motion.p
+          custom={0.1}
+          variants={fadeUp}
+          initial="hidden"
+          animate="visible"
+          className="text-[10px] tracking-[0.4em] uppercase text-white/40 font-light mb-8"
+        >
+          About
+        </motion.p>
+
+        <motion.div custom={0.2} variants={fadeUp} initial="hidden" animate="visible">
+          <h1
+            className="text-[12vw] md:text-[8vw] leading-[0.95] text-white"
+            style={{ fontFamily: '"Bebas Neue", sans-serif' }}
+          >
+            Hello,
+            <br />
+            I&apos;m <span className="text-white/60">Ishna</span>
+          </h1>
+        </motion.div>
+
+        <motion.p
+          custom={0.4}
+          variants={fadeUp}
+          initial="hidden"
+          animate="visible"
+          className="mt-8 text-[11px] tracking-[0.15em] text-white/40 font-light max-w-md"
+        >
+          Take a deep dive into my life of code and systems.
+        </motion.p>
+
+        <motion.div
+          custom={0.6}
+          variants={fadeUp}
+          initial="hidden"
+          animate="visible"
+          className="mt-8 flex items-center gap-2 text-[11px] tracking-[0.15em] text-white/30 font-light"
+        >
+          <ArrowDown size={14} className="animate-bounce" />
+          Scroll
+        </motion.div>
+
+        <motion.p
+          custom={0.8}
+          variants={fadeUp}
+          initial="hidden"
+          animate="visible"
+          className="mt-16 text-xl md:text-2xl lg:text-3xl leading-[1.4] text-white/70 font-light max-w-3xl"
+        >
+          A <span className="text-white">full-stack</span> developer building AI-powered
+          applications that automate workflows and solve real-world problems.
+        </motion.p>
+      </div>
+
       {/* ═══ BIO ═══ */}
       <div className="px-6 md:px-10 py-24 md:py-32 grid md:grid-cols-2 gap-16 md:gap-24 border-b border-white/10">
         <motion.div
@@ -212,25 +268,30 @@ export default function About() {
           className="space-y-6 text-[15px] md:text-[16px] leading-[1.8] text-white/60 font-light"
         >
           <p>
-            My foundation is in software engineering, and that background shapes everything I
-            build. I don&apos;t just write code — I architect systems that are fast, intelligent,
-            and built to solve real problems.
+            My foundation is in software engineering and that background shapes everything I
+            build. I do not just write code. I architect systems that are fast, intelligent and
+            built to solve real problems.
           </p>
           <p>
             From AI-powered career platforms to real-time data scrapers, I work across the full
-            stack using FastAPI, React, Django, and modern cloud infrastructure. Every project I
-            take on has one goal — make it work in the real world, not just in theory.
+            stack using FastAPI, React, Django and modern cloud infrastructure. Every project I
+            take on has one goal: make it work in the real world, not just in theory.
           </p>
           <p>
-            I&apos;m drawn to problems that others overlook — the messy, complex, high-impact kind.
-            That&apos;s where the most meaningful systems get built.
+            I am drawn to problems that others overlook. The messy, complex and high-impact kind.
+            That is where the most meaningful systems get built.
+          </p>
+          <p>
+            I love working with businesses and brands who are ready to grow online. Building
+            websites that do not just look good but actively optimize businesses by bringing them
+            new customers and automating their workflows.
           </p>
 
           <a
-            href="mailto:ishnazaka65@gmail.com"
+            href="mailto:hrcodeeater@gmail.com"
             className="inline-block mt-4 text-[13px] tracking-[0.1em] text-white/80 hover:text-white transition-colors border-b border-white/20 hover:border-white/50 pb-1"
           >
-            Feel free to reach out to discuss your project: ishnazaka65@gmail.com
+            Feel free to reach out to discuss your project: hrcodeeater@gmail.com
           </a>
         </motion.div>
       </div>
