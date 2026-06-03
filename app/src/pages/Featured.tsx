@@ -36,7 +36,7 @@ const projects = [
     category: "AI PLATFORM",
     industry: "CAREER TECH",
     year: "2024",
-    image: "https://github.com/user-attachments/assets/f4dea3be-b889-410a-9208-fa3c763daab3",
+    image: "https://github.com/user-attachments/assets/263e8292-718f-466c-917c-bfe4e2cf86b7",
     link: "https://rizwanali1321-career-ai.hf.space/",
   },
   {
