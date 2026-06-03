@@ -174,10 +174,63 @@ export default function About() {
           </p>
 
           <a
-            href="mailto:hello@codeeater.dev"
+            href="mailto:hrcodeeater@gmail.com"
             className="inline-block mt-4 text-[13px] tracking-[0.1em] text-white/80 hover:text-white transition-colors border-b border-white/20 hover:border-white/50 pb-1"
           >
-            Feel free to reach out to discuss your project: hello@codeeater.dev
+            Feel free to reach out to discuss your project: hrcodeeater@gmail.com
+          </a>
+        </motion.div>
+      </div>
+
+      {/* ═══ BIO ═══ */}
+      <div className="px-6 md:px-10 py-24 md:py-32 grid md:grid-cols-2 gap-16 md:gap-24 border-b border-white/10">
+        <motion.div
+          custom={0}
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+        >
+          <p className="text-[10px] tracking-[0.4em] uppercase text-white/40 font-light mb-6">
+            About
+          </p>
+          <h2
+            className="text-[6vw] md:text-[3.5vw] leading-[1.1] text-white"
+            style={{ fontFamily: '"Bebas Neue", sans-serif' }}
+          >
+            Hello, I&apos;m Ishna Zaka, a Lahore-based Full-Stack Developer building AI-powered
+            systems that scale.
+          </h2>
+        </motion.div>
+
+        <motion.div
+          custom={0.2}
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          className="space-y-6 text-[15px] md:text-[16px] leading-[1.8] text-white/60 font-light"
+        >
+          <p>
+            My foundation is in software engineering, and that background shapes everything I
+            build. I don&apos;t just write code — I architect systems that are fast, intelligent,
+            and built to solve real problems.
+          </p>
+          <p>
+            From AI-powered career platforms to real-time data scrapers, I work across the full
+            stack using FastAPI, React, Django, and modern cloud infrastructure. Every project I
+            take on has one goal — make it work in the real world, not just in theory.
+          </p>
+          <p>
+            I&apos;m drawn to problems that others overlook — the messy, complex, high-impact kind.
+            That&apos;s where the most meaningful systems get built.
+          </p>
+
+          <a
+            href="mailto:ishnazaka65@gmail.com"
+            className="inline-block mt-4 text-[13px] tracking-[0.1em] text-white/80 hover:text-white transition-colors border-b border-white/20 hover:border-white/50 pb-1"
+          >
+            Feel free to reach out to discuss your project: ishnazaka65@gmail.com
           </a>
         </motion.div>
       </div>
