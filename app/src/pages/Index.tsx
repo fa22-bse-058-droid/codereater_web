@@ -9,7 +9,19 @@ const projects = [
   { id: 1, title: "Nebula", category: "Web Design", industry: "Technology", image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&q=80" },
   { id: 2, title: "Vertex", category: "Development", industry: "Finance", image: "https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?w=800&q=80" },
   { id: 3, title: "Prism", category: "Branding", industry: "Creative", image: "https://images.unsplash.com/photo-1614850523459-c2f4c699c52e?w=800&q=80" },
-  { id: 4, title: "Cipher", category: "App Design", industry: "Security", image: "https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?w=800&q=80" },
+  {
+    id: 4,
+    title: "CAREERAI",
+    category: "AI PLATFORM",
+    industry: "CAREER TECH",
+    image: "https://github.com/user-attachments/assets/60e6df1a-adc9-40e7-90d7-d21b595bdea3",
+    previewImages: [
+      "https://github.com/user-attachments/assets/60e6df1a-adc9-40e7-90d7-d21b595bdea3",
+      "https://github.com/user-attachments/assets/a38a8e2e-ad0c-43f6-b8c1-5c0b44c13e71",
+      "https://github.com/user-attachments/assets/7e2dbd6d-3f4b-402a-bc0b-7a288c2cdf83",
+      "https://github.com/user-attachments/assets/a189f58a-4348-4743-8d78-5c4c5dd0b055",
+    ],
+  },
   { id: 5, title: "Flux", category: "Motion", industry: "Entertainment", image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&q=80" },
 ];
 
@@ -48,75 +60,83 @@ export default function Index() {
 
       {/* Project list */}
       <div className="divide-y divide-white/10">
-        {projects.map((project, i) => (
-          <motion.div
-            key={project.id}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 * i, duration: 0.6, ease: [0.76, 0, 0.24, 1] }}
-            onMouseEnter={() => setHoveredId(project.id)}
-            onMouseLeave={() => setHoveredId(null)}
-          >
-            <Link
-              to="/"
-              className="group flex items-center justify-between px-6 md:px-10 py-5 md:py-6 hover:bg-white/[0.02] transition-colors"
+        {projects.map((project, i) => {
+          const previewImages = project.previewImages ?? [
+            project.image,
+            project.image,
+            project.image,
+            project.image,
+          ];
+          return (
+            <motion.div
+              key={project.id}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 * i, duration: 0.6, ease: [0.76, 0, 0.24, 1] }}
+              onMouseEnter={() => setHoveredId(project.id)}
+              onMouseLeave={() => setHoveredId(null)}
             >
-              <div className="flex items-center gap-6 md:gap-12 flex-1">
-                <span
-                  className="text-xl md:text-2xl lg:text-3xl text-white group-hover:translate-x-2 transition-transform duration-500"
-                  style={{ fontFamily: '"Bebas Neue", sans-serif', letterSpacing: "0.02em" }}
-                >
-                  {project.title}
-                </span>
-                <span className="hidden md:block text-[11px] tracking-[0.1em] text-white/40 uppercase font-light">
-                  {project.category}
-                </span>
-              </div>
+              <Link
+                to="/"
+                className="group flex items-center justify-between px-6 md:px-10 py-5 md:py-6 hover:bg-white/[0.02] transition-colors"
+              >
+                <div className="flex items-center gap-6 md:gap-12 flex-1">
+                  <span
+                    className="text-xl md:text-2xl lg:text-3xl text-white group-hover:translate-x-2 transition-transform duration-500"
+                    style={{ fontFamily: '"Bebas Neue", sans-serif', letterSpacing: "0.02em" }}
+                  >
+                    {project.title}
+                  </span>
+                  <span className="hidden md:block text-[11px] tracking-[0.1em] text-white/40 uppercase font-light">
+                    {project.category}
+                  </span>
+                </div>
 
-              <div className="flex items-center gap-8 md:gap-16">
-                <span className="hidden lg:block text-[11px] tracking-[0.1em] text-white/40 uppercase font-light">
-                  {project.industry}
-                </span>
-                <span className="text-[11px] tracking-[0.15em] text-white/30 font-light">
-                  ({String(i + 1).padStart(2, "0")})
-                </span>
-              </div>
-            </Link>
+                <div className="flex items-center gap-8 md:gap-16">
+                  <span className="hidden lg:block text-[11px] tracking-[0.1em] text-white/40 uppercase font-light">
+                    {project.industry}
+                  </span>
+                  <span className="text-[11px] tracking-[0.15em] text-white/30 font-light">
+                    ({String(i + 1).padStart(2, "0")})
+                  </span>
+                </div>
+              </Link>
 
-            {/* Hover image */}
-            <AnimatePresence>
-              {hoveredId === project.id && (
-                <motion.div
-                  initial={{ opacity: 0, height: 0 }}
-                  animate={{ opacity: 1, height: "auto" }}
-                  exit={{ opacity: 0, height: 0 }}
-                  transition={{ duration: 0.4, ease: [0.76, 0, 0.24, 1] }}
-                  className="overflow-hidden"
-                >
-                  <div className="px-6 md:px-10 pb-6">
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-                      {[project.image, project.image, project.image, project.image].map((img, idx) => (
-                        <motion.div
-                          key={idx}
-                          initial={{ opacity: 0, y: 20 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          transition={{ delay: idx * 0.05, duration: 0.4 }}
-                          className="aspect-video rounded-sm overflow-hidden"
-                        >
-                          <img
-                            src={img}
-                            alt=""
-                            className="w-full h-full object-cover"
-                          />
-                        </motion.div>
-                      ))}
+              {/* Hover image */}
+              <AnimatePresence>
+                {hoveredId === project.id && (
+                  <motion.div
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: "auto" }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{ duration: 0.4, ease: [0.76, 0, 0.24, 1] }}
+                    className="overflow-hidden"
+                  >
+                    <div className="px-6 md:px-10 pb-6">
+                      <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                        {previewImages.map((img, idx) => (
+                          <motion.div
+                            key={idx}
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: idx * 0.05, duration: 0.4 }}
+                            className="aspect-video rounded-sm overflow-hidden"
+                          >
+                            <img
+                              src={img}
+                              alt=""
+                              className="w-full h-full object-cover"
+                            />
+                          </motion.div>
+                        ))}
+                      </div>
                     </div>
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </motion.div>
-        ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </motion.div>
+          );
+        })}
       </div>
     </section>
   );
