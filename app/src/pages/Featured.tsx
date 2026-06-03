@@ -32,11 +32,12 @@ const projects = [
   },
   {
     id: 4,
-    title: "Cipher",
-    category: "App Design",
-    industry: "Security",
+    title: "CAREERAI",
+    category: "AI PLATFORM",
+    industry: "CAREER TECH",
     year: "2024",
-    image: "https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?w=1920&q=80",
+    image: "https://github.com/user-attachments/assets/c601a074-9257-48b7-b51e-79c8e07b5592",
+    link: "https://rizwanali1321-career-ai.hf.space/",
   },
   {
     id: 5,
@@ -182,10 +183,22 @@ export default function Featured() {
 
       {/* View project link */}
       <div className="absolute bottom-24 right-6 md:right-10 z-10 hidden md:block">
-        <button className="flex items-center gap-2 text-[11px] tracking-[0.15em] uppercase text-white/40 hover:text-white transition-colors font-light group">
-          View Project
-          <ArrowUpRight size={12} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-        </button>
+        {project.link ? (
+          <a
+            href={project.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 text-[11px] tracking-[0.15em] uppercase text-white/40 hover:text-white transition-colors font-light group"
+          >
+            View Project
+            <ArrowUpRight size={12} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+          </a>
+        ) : (
+          <button className="flex items-center gap-2 text-[11px] tracking-[0.15em] uppercase text-white/40 hover:text-white transition-colors font-light group">
+            View Project
+            <ArrowUpRight size={12} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+          </button>
+        )}
       </div>
 
       {/* Grid lines decoration */}
